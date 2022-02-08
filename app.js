@@ -34,10 +34,10 @@ app.post("/",function(req,res){
 
   const jsonData = JSON.stringify(data);
 
-  const url= "https://us20.api.mailchimp.com/3.0/lists/0dfd0fb288";
+  const url= "https://us20.api.mailchimp.com/3.0/lists/{list_id}";
   const options ={
     method: "POST",
-    auth : "iniyan:aea6be415315cf63a221d21d2aeb5e19-us20"
+    auth : "iniyan:{apikey}"
   }
 
   const request = https.request(url,options, function(response){
@@ -70,8 +70,6 @@ app.post("/failure",function(req,res){
 
 
 
-// aea6be415315cf63a221d21d2aeb5e19-us20
-// 0dfd0fb288 audience id
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Server is running at port 3000");
